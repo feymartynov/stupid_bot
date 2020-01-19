@@ -1,0 +1,10 @@
+[package]
+name = "stupid_bot"
+version = "0.1.0"
+authors = ["Fey Martynov <timon@blincake.org>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.3"
+telegram-bot = { git = "https://github.com/telegram-rs/telegram-bot", branch = "master" }
+tokio = { version = "0.2", features = ["macros"] }
