@@ -25,7 +25,7 @@ impl State {
 
     fn message(&self) -> &'static str {
        match self {
-           Self::Idle => "пшли",
+           Self::Idle => "пшли пшли и они пшли",
            Self::Where => "куда?",
            Self::When => "когда?",
            Self::WithWhom => "с кем?",
@@ -44,7 +44,7 @@ async fn main() -> Result<(), Error> {
     while let Some(update) = stream.next().await {
         if let UpdateKind::Message(message) = update?.kind {
             if let MessageKind::Text { ref data, .. } = message.kind {
-                if state != State::Idle && data == "/отмена" || data == "отмена" {
+                if state != State::Idle && (data == "/отмена" || data == "отмена") {
                     state = State::Idle;
                     api.send(message.chat.text("алё отмена! отмена!")).await?;
                 } else if state == State::Idle && data == "/пшли" || state != State::Idle {
