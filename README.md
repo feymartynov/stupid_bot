@@ -10,3 +10,5 @@ Use proxychains4 in some countries:
 ``` bash
 TELEGRAM_BOT_TOKEN=your_bot_token proxychains4 cargo run
 ```
+
+For production build use `./build.sh` then take the binary in `./target/release/stupid_bot`.

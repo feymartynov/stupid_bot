@@ -1,0 +1,7 @@
+.env
+.gitignore
+target/debug/
+build.sh
+entrypoint.sh
+Dockerfile
+README.md
